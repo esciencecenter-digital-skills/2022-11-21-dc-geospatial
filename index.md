@@ -145,7 +145,7 @@ INTRODUCTION
 Edit the general explanatory paragraph below if you want to change
 the pitch.
 {% endcomment %}
-{% if info.carpentry == "swc" %}
+<!-- {% if info.carpentry == "swc" %}
 {% include swc/intro.html %}
 {% elsif info.carpentry == "dc" %}
 {% include dc/intro.html %}
@@ -154,7 +154,9 @@ the pitch.
 {% elsif info.carpentry == "ds" %}
 {% include ds/intro.md %}
 {% remote_include {{lesson_meta}}/description.md %}
-{% endif %}
+{% endif %} -->
+
+{% remote_include https://raw.githubusercontent.com/esciencecenter-digital-skills/workshop-metadata/main/dc-geospatial/description.md %}
 
 {% comment %}
 AUDIENCE
@@ -162,7 +164,7 @@ AUDIENCE
 Explain who your audience is.  (In particular, tell readers if the
 workshop is only open to people from a particular institution.
 {% endcomment %}
-{% if info.carpentry == "swc" %}
+<!-- {% if info.carpentry == "swc" %}
 {% include swc/who.html %}
 {% elsif info.carpentry == "dc" %}
 {% include dc/who.html %}
@@ -173,7 +175,12 @@ workshop is only open to people from a particular institution.
      <strong>Who:&nbsp;</strong>
      </div>
      <div markdown=1>{% remote_include {{lesson_meta}}/who.md %}</div></div>
-{% endif %}
+{% endif %} -->
+
+<div style="display: flex"><div>
+     <strong>Who:&nbsp;</strong>
+     </div>
+     <div markdown=1>{% remote_include https://raw.githubusercontent.com/esciencecenter-digital-skills/workshop-metadata/main/dc-geospatial/who.md %}</div></div>
 
 {% comment %}
 LOCATION
@@ -241,10 +248,8 @@ Modify the block below if there are any special requirements.
     Participants must bring a laptop with a
     Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) that they have administrative privileges on.
   {% else %}
-    Participants must have access to a computer with a
-    Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) that they have administrative privileges on.
+     <strong>Participants must install several software packages and download specific datasets in advance.</strong> Please see <a href="#setup">below</a> for detailed setup instructions. To do this, participants need to have access to a computer with a Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.)
   {% endif %}
-  They should have a few specific software packages installed (listed <a href="#setup">below</a>).
 </p>
 
 {% comment %}
@@ -401,7 +406,7 @@ of code below the Schedule `<h2>` header below with
 `{% include custom-schedule.html %}`.
 {% endcomment %}
 
-{% if info.carpentry == "ds" %}
+<!-- {% if info.carpentry == "ds" %}
 <h2 id="syllabus">Syllabus</h2>
 {% remote_include {{lesson_meta}}/syllabus.md %}
 {% endif %}
@@ -423,8 +428,8 @@ Edit/replace the text above if you want to include a schedule table.
 See the contents of the _includes/custom-schedule.html file for an example of
 how one of these schedule tables is constructed.
 {% endcomment %}
-{% endif %}
-
+{% endif %} -->
+{% remote_include https://raw.githubusercontent.com/esciencecenter-digital-skills/workshop-metadata/main/dc-geospatial/schedule.md %}
 <hr/>
 
 
@@ -442,7 +447,7 @@ please preview your site before committing, and make sure to run
 
 <h2 id="setup">Setup</h2>
 
-<p>
+<!-- <p>
   To participate in
   {% if info.carpentry == "swc" %}
   a Software Carpentry
@@ -461,14 +466,14 @@ please preview your site before committing, and make sure to run
   We maintain a list of common issues that occur during installation as a reference for instructors
   that may be useful on the
   <a href = "{{site.swc_github}}/workshop-template/wiki/Configuration-Problems-and-Solutions">Configuration Problems and Solutions wiki page</a>.
-</p>
+</p> -->
 
 {% comment %}
 These are the installation instructions for the tools used
 during the workshop.
 {% endcomment %}
 
-<h3 id="software-setup">Software setup</h3>
+<!-- <h3 id="software-setup">Software setup</h3>
 
 {% if info.carpentry == "swc" %}
 {% include swc/setup.html %}
@@ -492,7 +497,10 @@ during the workshop.
 Please check the "Setup" page of
 [the lesson site]({{ site.lesson_site }}) for instructions to follow
 to obtain the software and data you will need to follow the lesson.
-{% endif %}
+{% endif %} -->
+<h3 id="Software and data">Prepare data and software</h3>
+
+{% remote_include https://raw.githubusercontent.com/esciencecenter-digital-skills/workshop-metadata/main/dc-geospatial/setup.md %}
 
 {% comment %}
 For online workshops, the section below provides:

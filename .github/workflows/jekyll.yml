@@ -1,0 +1,17 @@
+name: Build and deploy Jekyll site to GitHub Pages
+
+on:
+  workflow_dispatch:
+  release:
+    types:
+      - published
+
+jobs:
+  github-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: helaili/jekyll-action@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          jekyll_src: .

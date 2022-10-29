@@ -1,0 +1,18 @@
+{% comment %}
+  Main title for lesson pages.
+{% endcomment %}
+
+{% include base_path.html %}
+{% comment %}
+  Assign first row in data file as info to access workshop data
+{% endcomment %}
+{% assign info = site.data.data[0] %}
+
+{% if site.kind == "lesson" %}
+<h1 class="maintitle"><a href="{{ relative_root_path }}{% link index.md %}">{{ info.title }}</a>{% if info.title %}: {{ info.title }}{% endif %}</h1>
+
+{% else %}
+
+<h1 class="maintitle">{{ info.title }}</h1>
+
+{% endif %}

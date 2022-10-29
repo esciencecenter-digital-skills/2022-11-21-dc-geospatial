@@ -1,0 +1,31 @@
+{% assign curricula = "swc-gapminder|swc-inflammation"  | split: "|" %}
+{% unless curricula contains info.curriculum %}
+{% include warning-curriculum.html %}
+{% endunless %}
+{% comment %}
+  Assign first row in data file as info to access workshop data
+{% endcomment %}
+{% assign info = site.data.data[0] %}
+{% include install_instructions/shell.html %}
+{% include install_instructions/git.html %}
+{% include install_instructions/editor.html %}
+
+{% if info.flavor == "r" %}
+{% include install_instructions/r.html %}
+{% elsif info.flavor == "python" %}
+{% include install_instructions/python.html %}
+{% elsif info.flavor == "FIXME" %}
+{% include install_instructions/r.html %}
+{% include install_instructions/python.html %}
+{% else %}
+{% include warning-flavor.html %}
+{% endif %}
+
+{% comment %}
+The following setup instructions are commented out because Carpentries workshops
+cover the these topics less frequently. Please uncomment the lines that
+correspond to the topics covered in your workshop.
+
+{% include install_instructions/sql.html %}
+{% include install_instructions/openrefine.html %}
+{% endcomment %}

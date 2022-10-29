@@ -1,0 +1,54 @@
+{% comment %}
+  Advertising box at the top of a workshop website home page.
+{% endcomment %}
+{% comment %}
+  Assign first row in data file as info to access workshop data
+{% endcomment %}
+{% assign info = site.data.data[0] %}
+{% assign begin_address = info.address | slice: 0, 4 | downcase  %}
+{% if info.address == "online" %}
+{% assign online = "true_private" %}
+{% elsif begin_address contains "http" %}
+{% assign online = "true_public" %}
+{% else %}
+{% assign online = "false" %}
+{% endif %}
+
+
+<div class="jumbotron">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      {% unless info.title == "Workshop Title" or info.title == "" %}
+      <h1>{{info.title}}</h1>
+      {% endunless %}
+      <h2>{{info.venue}}</h2>
+      <div class="row">
+        <div class="col-md-6">
+          {% if online == "true_public" %}
+          <p>Online (<a href="{{info.address}}">link</a>)</p>
+          {% elsif online == "true_private" %}
+          <p>Online</p>
+          {% endif %}
+          <p>{{info.humandate}}</p>
+          <p>{% if info.humantime %}{{info.humantime}}{% endif %}</p>
+        </div>
+        <div class="col-md-6">
+          <p>
+          <strong>Instructors:</strong>
+          {% if info.instructor %}
+          {{info.instructor | join: ', ' %}}
+          {% else %}
+          to be announced.
+          {% endif %}
+          </p>
+          {% if info.helper %}
+          <p>
+          <strong>Helpers:</strong>
+          {{info.helper | join: ', ' %}}
+          </p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

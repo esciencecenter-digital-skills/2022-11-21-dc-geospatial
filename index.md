@@ -406,14 +406,14 @@ of code below the Schedule `<h2>` header below with
 `{% include custom-schedule.html %}`.
 {% endcomment %}
 
-<!-- {% if info.carpentry == "ds" %}
+<!-- {% if info.carpentry == "ds" %} -->
 <h2 id="syllabus">Syllabus</h2>
 {% remote_include {{lesson_meta}}/syllabus.md %}
-{% endif %}
+<!-- {% endif %} -->
 
 <h2 id="schedule">Schedule</h2>
 
-{% if info.carpentry == "swc" %}
+<!-- {% if info.carpentry == "swc" %}
 {% include swc/schedule.html %}
 {% elsif info.carpentry == "dc" %}
 {% include dc/schedule.html %}
@@ -429,7 +429,7 @@ See the contents of the _includes/custom-schedule.html file for an example of
 how one of these schedule tables is constructed.
 {% endcomment %}
 {% endif %} -->
-{% remote_include https://raw.githubusercontent.com/esciencecenter-digital-skills/workshop-metadata/main/dc-geospatial/schedule.md %}
+{% remote_include {{lesson_meta}}/schedule.md %}
 <hr/>
 
 

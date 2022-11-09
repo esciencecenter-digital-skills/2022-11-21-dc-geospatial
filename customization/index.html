@@ -1,0 +1,608 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="last-modified" content="2022-11-09 10:31:23 +0000">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- meta "search-domain" used for google site search function google_search() -->
+    <meta name="search-domain" value="">
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/lesson.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/syntax.css" />
+    <link rel="license" href="#license-info" />
+
+    
+
+
+
+
+
+    <!-- Favicons for everyone -->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="../assets/favicons/ds/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/favicons/ds/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/favicons/ds/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/favicons/ds/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="../assets/favicons/ds/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="../assets/favicons/ds/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="../assets/favicons/ds/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../assets/favicons/ds/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="../assets/favicons/ds/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="../assets/favicons/ds/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="../assets/favicons/ds/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../assets/favicons/ds/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="../assets/favicons/ds/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="Digital Skills - Introduction to Geospatial Raster and Vector Data with Python"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="../assets/favicons/ds/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="../assets/favicons/ds/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="../assets/favicons/ds/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="../assets/favicons/ds/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="../assets/favicons/ds/mstile-310x310.png" />
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+  <title>
+  Introduction to Geospatial Raster and Vector Data with Python
+  </title>  
+
+  </head>
+  <body>
+
+    
+
+
+
+    <div class="container">
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      
+      <a href="https://www.esciencecenter.nl/" class="pull-left">
+        <img class="navbar-logo" src="../assets/img/netherlands-escience-center-logo-RGB.svg" alt="The Netherlands eScience Center logo" />
+      </a>
+      
+
+      
+      <a class="navbar-brand" href="../">Home</a>
+
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+	
+        
+
+        
+
+	
+	
+
+	
+        
+        <li><a href="https://esciencecenter-digital-skills.github.io/license">License</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1 class="maintitle">Introduction to Geospatial Raster and Vector Data with Python</h1>
+
+
+
+<article>
+<h2 id="table-of-content">Table of Content</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#table-of-content" id="markdown-toc-table-of-content">Table of Content</a></li>
+  <li><a href="#configuration-file-_configyml" id="markdown-toc-configuration-file-_configyml">Configuration File <code class="language-plaintext highlighter-rouge">_config.yml</code></a></li>
+  <li><a href="#site-url" id="markdown-toc-site-url">Site URL</a></li>
+  <li><a href="#home-page-indexmd-data-in-the-yaml-header" id="markdown-toc-home-page-indexmd-data-in-the-yaml-header">Home Page (<code class="language-plaintext highlighter-rouge">index.md</code>): data in the YAML header</a>    <ul>
+      <li><a href="#for-online-workshops" id="markdown-toc-for-online-workshops">For online workshops</a></li>
+    </ul>
+  </li>
+  <li><a href="#home-page-schedule" id="markdown-toc-home-page-schedule">Home Page: Schedule</a></li>
+  <li><a href="#home-page-setup-instructions" id="markdown-toc-home-page-setup-instructions">Home Page: Setup Instructions</a>    <ul>
+      <li><a href="#software-carpentry-workshops" id="markdown-toc-software-carpentry-workshops">Software Carpentry workshops</a>        <ul>
+          <li><a href="#default-settings" id="markdown-toc-default-settings">Default settings</a></li>
+          <li><a href="#if-you-need-to-remove-tools" id="markdown-toc-if-you-need-to-remove-tools">If you need to remove tools</a></li>
+          <li><a href="#if-you-need-to-add-tools" id="markdown-toc-if-you-need-to-add-tools">If you need to add tools</a></li>
+        </ul>
+      </li>
+      <li><a href="#data-carpentry-workshops" id="markdown-toc-data-carpentry-workshops">Data Carpentry workshops</a></li>
+      <li><a href="#library-carpentry-workshops" id="markdown-toc-library-carpentry-workshops">Library Carpentry workshops</a></li>
+    </ul>
+  </li>
+  <li><a href="#homepage-who-can-attend" id="markdown-toc-homepage-who-can-attend">Homepage: who can attend?</a></li>
+  <li><a href="#updating-the-repository" id="markdown-toc-updating-the-repository">Updating the repository</a></li>
+</ul>
+
+<h2 id="configuration-file-_configyml">Configuration File <code class="language-plaintext highlighter-rouge">_config.yml</code></h2>
+
+<p>You should edit the <code class="language-plaintext highlighter-rouge">_config.yml</code> configuration file in the root directory of your workshop to
+configure some site-wide variables and make the site function correctly:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">carpentry</code> - to tell us which carpentry workshop this is. Possible values are:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">"swc"</code> for Software Carpentry workshops,</li>
+      <li><code class="language-plaintext highlighter-rouge">"dc"</code> for Data Carpentry workshops,</li>
+      <li><code class="language-plaintext highlighter-rouge">"lc"</code> for Library Carpentry workshops, and</li>
+      <li><code class="language-plaintext highlighter-rouge">"cp"</code> for general Carpentries events such as instructor trainings (for which you should use
+<a href="https://github.com/carpentries/training-template">https://github.com/carpentries/training-template</a> as the website template).</li>
+      <li><code class="language-plaintext highlighter-rouge">"pilot"</code> for workshops piloting a new lesson (e.g. in The Carpentries Incubator).</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">curriculum</code> - to tell us which curriculum is being taught.
+At the moment, applicable to Software and Data Carpentry workshops only.
+Possible values are:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">"dc-ecology"</code>, <code class="language-plaintext highlighter-rouge">"dc-genomics"</code>, <code class="language-plaintext highlighter-rouge">"dc-socsci"</code>, or <code class="language-plaintext highlighter-rouge">"dc-geospatial"</code> for Data Carpentry
+workshops</li>
+      <li><code class="language-plaintext highlighter-rouge">"swc-inflammation"</code> or <code class="language-plaintext highlighter-rouge">"swc-gapminder"</code> for Software Carpentry workshops.</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">flavor</code> - <code class="language-plaintext highlighter-rouge">"r"</code> or <code class="language-plaintext highlighter-rouge">"python"</code> depending on which lessons are being taught at the workshop
+(currently only for Data Carpentry and Software Carpentry workshops).</li>
+  <li><code class="language-plaintext highlighter-rouge">title</code> - overall title for the workshop. If set (i.e., different from “Workshop Title” or empty),
+it will appear in the “jumbotron” (the gray box at the top of the page). This variable is also
+used for the title of the extra pages. More information about extra pages are <a href="https://github.com/carpentries/workshop-template#creating-extra-pages">available in the
+README</a>.</li>
+</ul>
+
+<p>For lesson pilot workshops, you should uncomment the following three fields in
+<code class="language-plaintext highlighter-rouge">_config.yml</code>:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">pilot_lesson_site</code> - the URL of the lesson pages that will be taught at the workshop.</li>
+  <li><code class="language-plaintext highlighter-rouge">pilot_pre_survey</code> - the URL of the pre-workshop survey you have prepared for the pilot workshop. (The standard Carpentries pre- and post-workshop surveys should not be used for pilot workshops.)</li>
+  <li><code class="language-plaintext highlighter-rouge">pilot_post_survey</code> - the URL of the post-workshop survey you have prepared for the pilot workshop.</li>
+</ul>
+
+<h2 id="site-url">Site URL</h2>
+
+<p>GitHub Pages sites are formatted as <code class="language-plaintext highlighter-rouge">https://GITHUB_USERNAME.github.io/REPOSITORY_NAME</code>.
+For example, if the URL for your repository is <code class="language-plaintext highlighter-rouge">https://github.com/gvwilson/2015-07-01-oomza</code>,
+the URL for its website will be <code class="language-plaintext highlighter-rouge">http://gvwilson.github.io/2015-07-01-oomza</code>.</p>
+
+<p>You should not need to modify any of the other variable values in <code class="language-plaintext highlighter-rouge">_config.yml</code>.</p>
+
+<h2 id="home-page-indexmd-data-in-the-yaml-header">Home Page (<code class="language-plaintext highlighter-rouge">index.md</code>): data in the YAML header</h2>
+
+<p>Your workshop’s home page lives in <code class="language-plaintext highlighter-rouge">index.md</code>,
+which must define the values below in its header.
+If your workshop is taught online, see the
+<a href="#for-online-workshops">following section</a> for customization
+options.</p>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">layout</code> must be <code class="language-plaintext highlighter-rouge">workshop</code>.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">venue</code> is the short name of the institution or group hosting the
+workshop, like “Euphoric State University”.  It should <em>not</em>
+include the address or other details, since this value is
+displayed in a table on websites (e.g.,
+<a href="https://carpentries.org/upcoming_workshops/">https://carpentries.org/upcoming_workshops/</a>). See section
+below for value to use for online workshops.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">address</code> is the workshop’s address (including details like the
+room number). The address should be all on one line.
+See section below for value to use for online workshops.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">country</code> must be a two-letter ISO-3166 code for the country in
+which the workshop is going to take place, such as “fr” (for
+France) or “nz” (for New Zealand) - see <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements">Wikipedia</a>
+for a complete list. See section below for value to use for
+online workshops.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">language</code> is the language that will be used in the workshop.
+It must be an <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1 code</a>.
+Note that two-letter codes mean different things for countries
+and languages: “ar” is Arabic when used for a language, but
+Argentina when used for a country.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">latitude</code> and <code class="language-plaintext highlighter-rouge">longitude</code> are the latitude and longitude of the workshop
+site (so we can put a pin on our map). You can use
+<a href="https://getlatlong.net/">this site</a> to find these values.
+See section below for value to use for online workshops.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">humandate</code> is the human-friendly start and end date for the
+ workshop.  Please use three-letter month names and abbreviations
+ (e.g., <code class="language-plaintext highlighter-rouge">Jul</code> instead of <code class="language-plaintext highlighter-rouge">July</code>), since these values are displayed
+ in a table on our websites.  (Strictly speaking this information
+ is redundant, since we require a machine-readable <code class="language-plaintext highlighter-rouge">startdate</code> and
+ <code class="language-plaintext highlighter-rouge">enddate</code>, but reliably translating those into human-readable
+ dates is an interesting challenge…)</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">humantime</code> is the human-friendly start and end time for each day of
+the workshop, e.g., “09:00 am - 4:00 pm” or “09:00-16:00”.  (We
+recognize that we ought to allow different start or end times on
+different days, but going down that path leads eventually to
+embedding iCal date/time specifications in our headers, which in
+turn leads to madness…)</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">startdate</code> is the workshop’s starting date in YYYY-MM-DD format,
+such as <code class="language-plaintext highlighter-rouge">2015-07-01</code>.  You must use four digits for the year and
+two each for the month and day.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">enddate</code> is the workshop’s ending date in the same format.  If your
+workshop is only one day long, the <code class="language-plaintext highlighter-rouge">enddate</code> field should be deleted.
+If your workshop has a more complicated schedule (e.g., a half day a
+week for four weeks), please delete the <code class="language-plaintext highlighter-rouge">enddate</code> field and only tell
+us its start date.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">instructor</code> is a comma-separated list of instructor names.  The
+list must be enclosed in square brackets, and each name must be in
+double quotes, as in <code class="language-plaintext highlighter-rouge">["Alan Turing","Grace Hopper"]</code>.  Do not
+include other information (such as the word “instructor”) in these
+values.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">helper</code> is a comma-separated list of helper names formatted in the
+same way as the instructor names.  If there are no helpers, use an
+empty list <code class="language-plaintext highlighter-rouge">[]</code>.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">contact</code> is the contact email address to use for your workshop.
+If you do not provide a contact email address, your website will
+display the address for the workshop coordinators (who probably
+won’t be able to answer questions about the specific details of
+your workshop).</p>
+  </li>
+</ul>
+
+<p>The header may optionally define the following:</p>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">collaborative_notes</code> is the URL for the Etherpad for your workshop.
+If you are not using an Etherpad, you can delete this line. You can
+create a carpentries etherpad <a href="https://pad.carpentries.org/">here</a>.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">eventbrite</code> is the multi-digit Eventbrite registration key.  If you
+are using Eventbrite, the Carpentries Regional Coordinators will
+give this to you.  If you are using something else, you may delete
+this line.  Note: this value must be given as a string in double
+quotes, rather than as a number.</p>
+  </li>
+</ul>
+
+<h3 id="for-online-workshops">For online workshops</h3>
+
+<p>If the workshop is online, follow the same instructions as above with the
+following modifications:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">venue</code>: Use the name of the institution that organizes the workshop and do
+not include a mention that it is an online workshop.</li>
+  <li><code class="language-plaintext highlighter-rouge">address</code>: If you can safely share the URL for the videoconferencing, you may
+list it here (it must start with <code class="language-plaintext highlighter-rouge">http</code> or <code class="language-plaintext highlighter-rouge">https</code>); if you cannot or prefer
+to not share the videoconferencing information, use the value <code class="language-plaintext highlighter-rouge">online</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">country</code>: Please use the country associated with the host institution for the
+workshop.</li>
+  <li><code class="language-plaintext highlighter-rouge">latitude</code> and <code class="language-plaintext highlighter-rouge">longitude</code>: if it makes sense, use the coordinates for the
+host institution. If it does not, use <code class="language-plaintext highlighter-rouge">0</code> for both the latitude and the
+longitude.</li>
+</ul>
+
+<p>By default, the Setup Instructions will list the installation instructions for the
+videoconferencing service Zoom.
+If you use a different videoconferencing service,
+you can edit the file in <code class="language-plaintext highlighter-rouge">_includes/install_instructions/videoconferencing.html</code>
+to include the relevant installation instructions.</p>
+
+<h2 id="home-page-schedule">Home Page: Schedule</h2>
+
+<p>By default, the template displays the typical schedule for your workshop based on
+the values of the variables set in the <code class="language-plaintext highlighter-rouge">_config.yml</code>. If you need to  make
+minor modifications to this schedule, you can edit the <code class="language-plaintext highlighter-rouge">schedule.html</code> file
+found in the sub-folder of the <code class="language-plaintext highlighter-rouge">_includes</code> folder that matches the type of
+workshop you will be teaching  (<code class="language-plaintext highlighter-rouge">dc</code>, <code class="language-plaintext highlighter-rouge">lc</code>, or <code class="language-plaintext highlighter-rouge">swc</code>).</p>
+
+<p>If you wish to create your own custom schedule, an empty template is available in
+<code class="language-plaintext highlighter-rouge">_includes/custom-schedule.html</code>. In this file, we provide the structure for a
+4-day workshop as it is often used for online workshops. To use the custom
+schedule instead of the one provided by default in the template, delete the
+block of code found under the “Schedule” header and replace it with
+<code class="language-plaintext highlighter-rouge">{% include custom-schedule.html %}</code>.</p>
+
+<p>The schedule is formatted using a table. If you would like to learn more about
+how to write tables in HTML, here is an <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table">overview from
+Mozilla</a> and
+the <a href="https://www.w3schools.com/html/html_tables.asp">w3schools</a>.</p>
+
+<p>For pilot workshops, some placeholder text including a link to the lesson homepage
+will be displayed instead of a schedule table.
+The lesson homepage will contain estimated timings for teaching the lesson.
+Use the approach described above for <code class="language-plaintext highlighter-rouge">_includes/custome-schedule.html</code>
+if you would like to create a schedule table to replace this text.</p>
+
+<h2 id="home-page-setup-instructions">Home Page: Setup Instructions</h2>
+
+<p>If you need assistance with customizing the setup instructions for your website,
+feel free to ask your questions in the Carpentries
+<a href="https://swcarpentry.slack.com/archives/C08BVNU00">Instructors Slack channel</a>
+(<a href="https://swc-slack-invite.herokuapp.com/">join The Carpentries Slack workspace</a>).</p>
+
+<h3 id="software-carpentry-workshops">Software Carpentry workshops</h3>
+
+<h4 id="default-settings">Default settings</h4>
+
+<p>For Software Carpentry workshops,
+setting the <code class="language-plaintext highlighter-rouge">flavor</code> variable in <code class="language-plaintext highlighter-rouge">_config.yml</code> to <code class="language-plaintext highlighter-rouge">r</code> or <code class="language-plaintext highlighter-rouge">python</code>
+will include the respective installation instructions for these tools.
+Additionally, by default, the installation instructions for
+a text editor, the Bash shell, and Git are included.</p>
+
+<h4 id="if-you-need-to-remove-tools">If you need to remove tools</h4>
+
+<p>If you need to remove any of the instructions for the default
+set of tools,
+you can delete lines that include these instructions in
+the <code class="language-plaintext highlighter-rouge">_includes/swc/setup.html</code> file.</p>
+
+<h4 id="if-you-need-to-add-tools">If you need to add tools</h4>
+
+<p>If you need to add installation instructions for other tools,
+we provide installation instructions for SQL and OpenRefine.
+To make them appear on your workshop website,
+you can move the <code class="language-plaintext highlighter-rouge">{% include %}</code> statements outside the comment
+block in <code class="language-plaintext highlighter-rouge">_includes/swc/setup.html</code>.</p>
+
+<p>If you need to add installation instructions for other tools,
+you will need to write your own. You can use installation instructions
+for other tools located in the <code class="language-plaintext highlighter-rouge">_includes/install_instructions/</code> folder
+as examples.</p>
+
+<h3 id="data-carpentry-workshops">Data Carpentry workshops</h3>
+
+<p>For Data Carpentry workshops,
+installation instructions live on the workshop overview page for each curriculum.
+Instead of including installation instructions in the workshop template,
+the workshop template includes links to these instructions.
+The correct link will be displyed
+when using the appropriate combination of values
+for the <code class="language-plaintext highlighter-rouge">curriculum</code>  and <code class="language-plaintext highlighter-rouge">flavor</code> variables
+in the <code class="language-plaintext highlighter-rouge">_config.yml</code> file.</p>
+
+<h3 id="library-carpentry-workshops">Library Carpentry workshops</h3>
+
+<p>By default, Library Carpentry workshop websites
+include installation instructions for the Bash shell and Git.</p>
+
+<p>You may need to add installation instructions for additional tools
+you will be using during your workshop
+by editing the <code class="language-plaintext highlighter-rouge">_includes/lc/setup.html</code> file.
+You can either write your own instructions using the ones
+provided in <code class="language-plaintext highlighter-rouge">_includes/lc/setup.html</code> as an example,
+or, if you are using tools that already have installation instructions
+provided for Software Carpentry,
+you can add <code class="language-plaintext highlighter-rouge">{% include install_instructions/&lt;filename.html&gt; %}</code>
+where <code class="language-plaintext highlighter-rouge">&lt;filename.html&gt;</code> needs to be replaced by one of the files
+in the <code class="language-plaintext highlighter-rouge">_includes/install_instructions</code> folder.</p>
+
+<h2 id="homepage-who-can-attend">Homepage: who can attend?</h2>
+
+<p>If you want to specify who can attend the workshop you are advertising,
+there is a commented-out section in <code class="language-plaintext highlighter-rouge">index.md</code> that you can use to
+inform workshop website visitors of who can attend the event.
+You may want to specify that only members of your university,
+department, etc. can attend or that the event is open to the public.
+We don’t provide templated text for this as each situation is different.
+We do provide a section, called “Who can attend?” for you to specify this
+information.</p>
+
+<p>To use it, move the {% endcomment %} line above the
+<code class="language-plaintext highlighter-rouge">&lt;p&gt;</code> tag marking the beginning of this section and edit the paragraph
+to reflect the attendance policy for your workshop.</p>
+
+<h2 id="updating-the-repository">Updating the repository</h2>
+
+<p>If for some reason,
+such as the installation instructions having become disconnected
+with the current lesson material,
+you need to get changes from this repository
+into the clone of it with your workshop page,
+please follow the steps bellow:</p>
+
+<ol>
+  <li>Add the workshop-template repository as upstream:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>git remote add upstream https://github.com/carpentries/workshop-template.git
+</code></pre></div>    </div>
+  </li>
+  <li>Fetch the data from upstream repository (also know as the workshop-template
+ repository):
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>git pull upstream
+</code></pre></div>    </div>
+  </li>
+  <li>Address possible merge conflicts, and
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>git commit <span class="nt">-a</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Push the changes to your repository on GitHub:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>git push origin gh-pages
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+
+</article>
+
+      
+      
+
+
+<footer>
+  <hr/>
+  <div class="row">
+    <div class="col-md-6" align="left">
+      <h4>
+	Copyright &copy; 2016–2022
+	
+        <a href="https://carpentries.org/">The Carpentries</a>
+	
+      </h4>
+    </div>
+    <div class="col-md-6" align="right">
+      <h4>
+        
+        <a href="mailto:training@esciencecenter.nl">Contact The Training Team</a>
+        
+      </h4>
+    </div>
+  </div>
+</footer>
+
+      
+    </div>
+    
+
+
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/lesson.js"></script>
+
+<script>
+/* Based on https://stackoverflow.com/a/30894829/1802726 */
+var show_instructions = function() {
+     //set all nav tabs to inactive
+    $('.nav-tabs li').removeClass('active');
+
+    //get all nav tabs matching the os and set to active
+    $('.nav-tabs li a[href*="'+localStorage.os+'"]').closest('li').addClass('active');
+
+    //set all tabs to inactive
+    $('.tab-pane').removeClass('active');
+
+    //get all tabs matching the os and set to active
+    $('.tab-pane[id*="'+localStorage.os+'"]').addClass('active');
+}
+
+if (typeof(Storage) !== "undefined") {
+    if (localStorage.os == "undefined") {
+        localStorage.os = "windows";
+    }
+    show_instructions();
+} else {
+    console.log("No localStorage");
+}
+
+/* Based on https://stackoverflow.com/a/30894829/1802726 */
+$('.nav-tabs li a').click(function(){
+    //get selected os
+    localStorage.os = $(this)[0].dataset.os;
+    show_instructions();
+});
+
+  // detect misssing iframe for Eventbrite
+  $(document).ready(function(){
+      if ($('iframe').height() == 0) {
+          $('iframe').before('<p>Looks like your adblocker blocked the registration window. Please navigate to <a href="https://www.eventbrite.com/tickets-external?eid=&ref=etckt">https://www.eventbrite.com/tickets-external?eid=&ref=etckt</a> to register.</p>');
+      }
+  });
+
+  // hide alerts when site is rendered on carpentries.github.io
+  $(document).ready(function() {
+      if (location.href.startsWith("https://carpentries.github.io/workshop-template/")) {
+          $("div.alert").hide();
+      }
+  });
+
+</script>
+
+  </body>
+</html>
